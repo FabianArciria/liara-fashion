@@ -1,0 +1,144 @@
+/* PALETA */
+:root {
+    --blanco: #ffffff;
+    --gold: #f7d67a;
+
+    --pastel-rosa: #F8D7E3;
+    --pastel-beige: #FFF4DF;
+    --pastel-celeste: #D9F1FF;
+    --pastel-lavanda: #E7D8FF;
+
+    --negro: #000000;
+}
+
+/* Body con fondo pastel premium */
+body {
+    margin: 0;
+    background: linear-gradient(135deg,
+        var(--pastel-rosa),
+        var(--pastel-celeste),
+        var(--pastel-beige)
+    );
+    font-family: Arial, sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 230px;
+    background: var(--blanco);
+    border-right: 3px solid var(--gold);
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 25px;
+}
+
+.sidebar nav a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 12px 0;
+    color: var(--negro);
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    color: var(--gold);
+    transform: translateX(5px);
+}
+
+/* CONTENIDO */
+.content {
+    margin-left: 250px;
+    padding: 40px;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(to bottom right,
+        var(--blanco),
+        var(--pastel-beige)
+    );
+    padding: 120px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--negro);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.btn-gold {
+    background: var(--gold);
+    padding: 12px 25px;
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn-gold:hover {
+    background: #e6c163;
+    transform: translateY(-2px);
+}
+
+/* CATÁLOGO */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.producto {
+    background: var(--blanco);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.producto:hover {
+    background: var(--pastel-celeste);
+    transform: scale(1.03);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* FORMULARIO */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+}
+
+.formulario input,
+.formulario textarea {
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--pastel-beige);
+    border: 1px solid var(--gold);
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--negro);
+    margin-bottom: 20px;
+}
