@@ -6,11 +6,9 @@ const PHONE_NUMBER = "573217147358"; // reemplaza si quieres
 // ===== SIDEBAR (hamburger) =====
 const hamburger = document.querySelector('.hamburger');
 const sidebar = document.querySelector('.sidebar');
-const overlayEl = document.createElement('div');
-overlayEl.id = 'overlay';
-overlayEl.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:1500;display:none";
-document.body.appendChild(overlayEl);
+const overlayEl = document.getElementById('overlay');
 
+// abrir/cerrar sidebar y overlay
 hamburger?.addEventListener('click', () => {
   sidebar.classList.toggle('active');
   overlayEl.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
@@ -42,9 +40,7 @@ class Slider {
     this.start();
     this.bindControls();
   }
-  start(){
-    if(this.autoplay) this.timer = setInterval(()=> this.next(), this.delay);
-  }
+  start(){ if(this.autoplay) this.timer = setInterval(()=> this.next(), this.delay); }
   stop(){ clearInterval(this.timer); }
   go(i){
     if(!this.slidesEl) return;
@@ -85,7 +81,7 @@ const sidebarLinks = document.querySelectorAll('.sidebar nav a');
 
 sidebarLinks.forEach(link => {
   link.addEventListener('click', () => {
-    sidebar.classList.remove('active'); // cierra sidebar al hacer click
-    overlayEl.style.display = 'none';   // oculta overlay al hacer click
+    sidebar.classList.remove('active'); // cierra sidebar
+    overlayEl.style.display = 'none';   // oculta overlay
   });
 });

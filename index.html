@@ -91,34 +91,11 @@
     </div>
   </main>
 
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+
   <div class="whatsapp" title="Contactar por WhatsApp">💬</div>
 
   <script src="assets/js/app.js"></script>
-  <script>
-    // JS para el hamburger
-    const hamburger = document.querySelector('.hamburger');
-    const sidebar = document.querySelector('.sidebar');
-    const links = document.querySelectorAll('.sidebar nav a');
-
-    // Abrir/cerrar sidebar al tocar el hamburger
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
-
-    // Cerrar sidebar al hacer click fuera
-    document.addEventListener('click', (e) => {
-      if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-        sidebar.classList.remove('active');
-      }
-    });
-
-    // Cerrar sidebar al tocar cualquier enlace en móvil
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>
-
