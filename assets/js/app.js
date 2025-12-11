@@ -8,7 +8,6 @@ const hamburger = document.querySelector('.hamburger');
 const sidebar = document.querySelector('.sidebar');
 const overlayEl = document.getElementById('overlay');
 
-// abrir/cerrar sidebar y overlay
 hamburger?.addEventListener('click', () => {
   sidebar.classList.toggle('active');
   overlayEl.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
@@ -40,7 +39,9 @@ class Slider {
     this.start();
     this.bindControls();
   }
-  start(){ if(this.autoplay) this.timer = setInterval(()=> this.next(), this.delay); }
+  start(){
+    if(this.autoplay) this.timer = setInterval(()=> this.next(), this.delay);
+  }
   stop(){ clearInterval(this.timer); }
   go(i){
     if(!this.slidesEl) return;
@@ -76,12 +77,11 @@ document.addEventListener('click', (e)=>{
   }
 });
 
-// ===== SIDEBAR LINKS =====
+// ===== CERRAR SIDEBAR AL HACER CLICK EN LINK =====
 const sidebarLinks = document.querySelectorAll('.sidebar nav a');
-
 sidebarLinks.forEach(link => {
   link.addEventListener('click', () => {
-    sidebar.classList.remove('active'); // cierra sidebar
-    overlayEl.style.display = 'none';   // oculta overlay
+    sidebar.classList.remove('active');
+    overlayEl.style.display = 'none';
   });
 });
