@@ -66,6 +66,8 @@ body{
   display: flex;
   flex-direction: column;
   gap: 18px;
+  max-height: 90vh; /* limita altura en móvil */
+  overflow-y: auto; /* scroll si hay contenido extra */
 }
 
 .sidebar-logo {
@@ -78,7 +80,7 @@ body{
 
 .sidebar-logo #logo {
   width: 100%;
-  max-width: 150px;
+  max-width: 150px; /* tamaño PC */
   height: auto;
   display: block;
   border-radius: 12px;
@@ -215,72 +217,24 @@ body{
   .hero{padding:28px}
   .slider .slide{height:260px}
 }
+
 @media(max-width:768px){
   .sidebar{left:-320px;position:fixed}
   .sidebar.active{left:0}
   .hamburger{display:block}
   .main{margin-left:0}
-}
-.sidebar-logo {
-  width: 150px;
-  margin: 0 auto 20px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.sidebar-logo #logo {
-  width: 100%;
-  max-width: 150px; /* limita tamaño en PC */
-  height: auto;
-  display: block;
-  border-radius: 12px; 
-}
-
-/* Móvil */
-@media(max-width:768px){
   .sidebar-logo {
-    width: 110px;
-    margin-bottom: 14px;
+    width: 90px;           /* tamaño móvil ajustado */
+    margin-bottom: 16px;   /* margen debajo */
   }
   .sidebar-logo #logo {
-    max-width: 110px;
+    max-width: 90px;       /* limita logo */
+    height: auto;
+  }
+
+  .sidebar {
+    max-height: 90vh;      /* limita altura */
+    overflow-y: auto;      /* scroll si hay contenido extra */
   }
 }
-/* =========================
-   LOGO REAL EN EL SIDEBAR
-   ========================= */
-.sidebar-logo {
-  width: 150px; /* tamaño PC */
-  margin: 0 auto 28px auto; /* centrado y espacio inferior como el 3D */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sidebar-logo #logo {
-  width: 100%;
-  max-width: 150px; /* limita tamaño en PC */
-  height: auto;
-  display: block;
-  border-radius: 12px; 
-  box-shadow: 0 8px 24px rgba(212,175,55,0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.sidebar-logo #logo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 32px rgba(212,175,55,0.25);
-}
-
-/* RESPONSIVO MÓVIL */
-@media(max-width:768px){
-  .sidebar-logo {
-    width: 110px;
-    margin-bottom: 20px;
-  }
-  .sidebar-logo #logo {
-    max-width: 110px;
-  }
-}
-

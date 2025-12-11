@@ -13,9 +13,9 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <!-- LOGO REAL EN EL LUGAR DEL 3D -->
+    <!-- LOGO REAL -->
     <div class="sidebar-logo">
-      <img id="logo" src="assets/images/logo.jpg" alt="Logo de la tienda">
+      <img id="logo" src="assets/images/logo.png" alt="Logo de la tienda">
     </div>
 
     <!-- NAVEGACIÓN -->
@@ -38,7 +38,7 @@
         <div class="controls">
           <button class="btn-glass" onclick="toggleDark()">🌗</button>
         </div>
-        <!-- LOGO DEL HEADER ELIMINADO -->
+        <!-- LOGO ELIMINADO DEL HEADER -->
       </header>
 
       <section class="hero">
@@ -98,15 +98,25 @@
     // JS para el hamburger
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
+    const links = document.querySelectorAll('.sidebar nav a');
 
+    // Abrir/cerrar sidebar al tocar el hamburger
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('active');
     });
 
+    // Cerrar sidebar al hacer click fuera
     document.addEventListener('click', (e) => {
       if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
         sidebar.classList.remove('active');
       }
+    });
+
+    // Cerrar sidebar al tocar cualquier enlace en móvil
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+      });
     });
   </script>
 </body>
