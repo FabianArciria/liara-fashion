@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Liara Fashion</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LIARA Fashion - Catálogo</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-    <aside class="sidebar">
-        <img src="assets/images/logo.png" alt="Logo" class="logo">
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="catalogo.html" class="active">Catálogo</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </aside>
+  <button class="hamburger" aria-label="Abrir menú">☰</button>
 
-    <main class="content">
-        <h1 class="title">Catálogo</h1>
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-3d" aria-hidden="true"><div class="face">LIARA</div></div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html" class="active">Catálogo</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div style="margin-top:auto;display:flex;gap:8px;flex-direction:column">
+      <button class="btn-glass" onclick="toggleDark()">Modo oscuro</button>
+    </div>
+  </aside>
 
-        <div class="grid-productos">
+  <main class="main">
+    <div class="container">
+      <header class="header">
+        <div class="brand"><h1>Catálogo</h1></div>
+      </header>
 
-            <div class="producto">
-                <img src="assets/images/base1.png" alt="">
-                <h3>Vestido Floral</h3>
-                <p class="precio">$120.000</p>
-                <a class="btn-gold" 
-                href="https://wa.me/573001112233?text=Hola, quiero hacer un pedido del Vestido Floral">
-                    Comprar por WhatsApp
-                </a>
-            </div>
+      <section>
+        <h3 class="section-title">Colecciones</h3>
+        <div class="products-grid">
+          <div class="card">
+            <img src="assets/images/productos/blusas.jpg" alt="">
+            <h3>Blusas</h3>
+            <div class="price">$65.000</div>
+            <button class="btn-primary" onclick="order('Blusa Elegante')">Consultar</button>
+          </div>
 
-            <div class="producto">
-                <img src="assets/images/base2.png" alt="">
-                <h3>Conjunto Beige</h3>
-                <p class="precio">$95.000</p>
-                <a class="btn-gold" 
-                href="https://wa.me/573001112233?text=Hola, quiero comprar el Conjunto Beige">
-                    Comprar por WhatsApp
-                </a>
-            </div>
+          <div class="card">
+            <img src="assets/images/productos/conjuntos.jpg" alt="">
+            <h3>Conjuntos</h3>
+            <div class="price">$95.000</div>
+            <button class="btn-primary" onclick="order('Conjunto Beige')">Consultar</button>
+          </div>
 
-            <div class="producto">
-                <img src="assets/images/base3.png" alt="">
-                <h3>Blusa Elegante</h3>
-                <p class="precio">$65.000</p>
-                <a class="btn-gold" 
-                href="https://wa.me/573001112233?text=Hola, quiero pedir la Blusa Elegante">
-                    Comprar por WhatsApp
-                </a>
-            </div>
-
+          <div class="card">
+            <img src="assets/images/productos/vestidos.jpg" alt="">
+            <h3>Vestidos</h3>
+            <div class="price">$120.000</div>
+            <button class="btn-primary" onclick="order('Vestido Floral')">Consultar</button>
+          </div>
         </div>
-    </main>
+      </section>
 
+      <footer class="footer">© 2025 LIARA Fashion</footer>
+    </div>
+  </main>
+
+  <div class="whatsapp" title="Contactar por WhatsApp">💬</div>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

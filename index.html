@@ -1,62 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIARA Fashion - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LIARA Fashion - Inicio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo-container">
-            <img src="assets/images/logo.png" alt="LIARA Fashion Logo" class="logo-img">
-            <h1 class="brand-name">LIARA Fashion</h1>
+  <button class="hamburger" aria-label="Abrir menú">☰</button>
+
+<aside class="sidebar" id="sidebar">
+
+  <!-- LOGO REAL -->
+  <img src="assets/images/logo.png" alt="Logo LIARA" class="logo-img">
+
+  <!-- LOGO 3D -->
+  <div class="logo-3d" aria-hidden="true">
+    <div class="face">LIARA</div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="active">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <div style="margin-top:auto;display:flex;gap:8px;flex-direction:column">
+    <button class="btn-glass" onclick="toggleDark()">Modo oscuro</button>
+    <a class="btn-primary" href="catalogo.html">Ver catálogo</a>
+  </div>
+</aside>
+
+  <main class="main">
+    <div class="container">
+      <header class="header">
+        <div class="brand">
+          <h1>LIARA Fashion</h1>
+          <div style="color:var(--muted)">Boutique | Estilo femenino</div>
         </div>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero">
-        <h2>Elegancia que inspira tu estilo</h2>
-        <p>Moda femenina exclusiva, simple y poderosa.</p>
-        <a href="catalogo.html" class="btn-gold">Ver Catálogo</a>
-    </section>
-
-    <!-- PRODUCTOS -->
-    <section class="products">
-        <h2>Nuestros Productos</h2>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x350" alt="Producto 1">
-                <h3>Blusa Elegante</h3>
-                <p>$65.000 COP</p>
-                <button onclick="order('Blusa Elegante')">Comprar por WhatsApp</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x350" alt="Producto 2">
-                <h3>Vestido Floral</h3>
-                <p>$120.000 COP</p>
-                <button onclick="order('Vestido Floral')">Comprar por WhatsApp</button>
-            </div>
-
-            <div class="product-card">
-                <img src="https://via.placeholder.com/250x350" alt="Producto 3">
-                <h3>Pantalón Clásico</h3>
-                <p>$80.000 COP</p>
-                <button onclick="order('Pantalón Clásico')">Comprar por WhatsApp</button>
-            </div>
-
+        <div class="controls">
+          <button class="btn-glass" onclick="toggleDark()">🌗</button>
         </div>
-    </section>
+      </header>
 
-    <script src="script.js"></script>
+      <section class="hero">
+        <h2>Elegancia que inspira</h2>
+        <p>Descubre colecciones seleccionadas con paleta dorada y pasteles suaves.</p>
+
+        <!-- SLIDER -->
+        <div class="slider">
+          <div class="slides">
+            <div class="slide" style="background-image:url('assets/images/slider1.jpg')"></div>
+            <div class="slide" style="background-image:url('assets/images/slider2.jpg')"></div>
+            <div class="slide" style="background-image:url('assets/images/slider3.jpg')"></div>
+          </div>
+          <div class="slider-controls">
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3 class="section-title">Productos destacados</h3>
+        <div class="products-grid">
+          <div class="card">
+            <img src="assets/images/productos/producto1.jpg" alt="">
+            <h3>Blusa Elegante</h3>
+            <div class="price">$65.000 COP</div>
+            <button class="btn-primary" onclick="order('Blusa Elegante')">Comprar por WhatsApp</button>
+          </div>
+
+          <div class="card">
+            <img src="assets/images/productos/producto2.jpg" alt="">
+            <h3>Vestido Floral</h3>
+            <div class="price">$120.000 COP</div>
+            <button class="btn-primary" onclick="order('Vestido Floral')">Comprar por WhatsApp</button>
+          </div>
+
+          <div class="card">
+            <img src="assets/images/productos/producto3.jpg" alt="">
+            <h3>Pantalón Clásico</h3>
+            <div class="price">$80.000 COP</div>
+            <button class="btn-primary" onclick="order('Pantalón Clásico')">Comprar por WhatsApp</button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        © 2025 LIARA Fashion. Todos los derechos reservados • Diseño elegante
+      </footer>
+    </div>
+  </main>
+
+  <div class="whatsapp" title="Contactar por WhatsApp">💬</div>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
