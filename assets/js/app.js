@@ -79,3 +79,10 @@ document.addEventListener('click', (e)=>{
     window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent('Hola, quisiera más información')}`, '_blank');
   }
 });
+const sidebarLinks = document.querySelectorAll('.sidebar nav a');
+
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('active'); // cierra sidebar al hacer click
+  });
+});

@@ -51,53 +51,82 @@ body{
   justify-content:flex-start;
 }
 
-/* ===== SIDEBAR ===== */
+/* =========================
+   SIDEBAR Y LOGO REAL
+   ========================= */
 .sidebar {
-  width:260px;
-  background:var(--white);
-  border-right:4px solid var(--gold);
-  padding:28px 20px;
-  position:fixed;
-  top:0;left:0;bottom:0;
-  z-index:1200;
+  width: 260px;
+  background: var(--white);
+  border-right: 4px solid var(--gold);
+  padding: 28px 20px;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 1200;
   box-shadow: var(--card-shadow);
-  display:flex;
-  flex-direction:column;
-  gap:18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.logo-3d {
-  width:150px;height:150px;margin:0 auto;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-  transform-style:preserve-3d;
-  perspective:800px;
+.sidebar-logo {
+  width: 150px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Pseudo 3D logo placeholder (replace image later) */
-.logo-3d .face{
-  width:120px;height:120px;border-radius:14px;
-  background: linear-gradient(145deg,var(--gold),#f7e0a6);
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-weight:700;font-family: "Playfair Display", serif;
-  box-shadow: 0 10px 30px rgba(212,175,55,0.25);
-  transform: translateZ(40px) rotateX(-8deg);
+.sidebar-logo #logo {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(212,175,55,0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* SIDEBAR NAV */
-.sidebar nav{margin-top:8px;display:flex;flex-direction:column;gap:8px}
-.sidebar nav a{
-  color:#111;text-decoration:none;padding:10px;border-radius:10px;font-weight:600;
-  transition:all .18s;
+.sidebar-logo #logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(212,175,55,0.25);
 }
-.sidebar nav a:hover{background:linear-gradient(90deg, rgba(212,175,55,0.08), transparent);color:var(--gold);transform:translateX(6px)}
 
-/* ===== MOBILE HAMBURGER ===== */
+/* NAVEGACIÓN */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sidebar nav a {
+  color: #111;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.18s;
+}
+
+.sidebar nav a:hover {
+  background: linear-gradient(90deg, rgba(212,175,55,0.08), transparent);
+  color: var(--gold);
+  transform: translateX(6px);
+}
+
+/* HAMBURGER MÓVIL */
 .hamburger {
-  display:none;
-  position:fixed;left:18px;top:16px;z-index:1400;
-  background:var(--white);border-radius:10px;padding:10px;border:2px solid var(--gold);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);cursor:pointer;
+  display: none;
+  position: fixed;
+  left: 18px;
+  top: 16px;
+  z-index: 1400;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid var(--gold);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  cursor: pointer;
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -180,7 +209,7 @@ body{
   margin-top:36px;padding:28px;text-align:center;border-top:1px solid rgba(0,0,0,0.04);color:var(--muted)
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVO ===== */
 @media(max-width:980px){
   .main{padding:22px}
   .hero{padding:28px}
@@ -191,5 +220,67 @@ body{
   .sidebar.active{left:0}
   .hamburger{display:block}
   .main{margin-left:0}
-  .logo-3d{width:110px;height:110px}
 }
+.sidebar-logo {
+  width: 150px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-logo #logo {
+  width: 100%;
+  max-width: 150px; /* limita tamaño en PC */
+  height: auto;
+  display: block;
+  border-radius: 12px; 
+}
+
+/* Móvil */
+@media(max-width:768px){
+  .sidebar-logo {
+    width: 110px;
+    margin-bottom: 14px;
+  }
+  .sidebar-logo #logo {
+    max-width: 110px;
+  }
+}
+/* =========================
+   LOGO REAL EN EL SIDEBAR
+   ========================= */
+.sidebar-logo {
+  width: 150px; /* tamaño PC */
+  margin: 0 auto 28px auto; /* centrado y espacio inferior como el 3D */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-logo #logo {
+  width: 100%;
+  max-width: 150px; /* limita tamaño en PC */
+  height: auto;
+  display: block;
+  border-radius: 12px; 
+  box-shadow: 0 8px 24px rgba(212,175,55,0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebar-logo #logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(212,175,55,0.25);
+}
+
+/* RESPONSIVO MÓVIL */
+@media(max-width:768px){
+  .sidebar-logo {
+    width: 110px;
+    margin-bottom: 20px;
+  }
+  .sidebar-logo #logo {
+    max-width: 110px;
+  }
+}
+
