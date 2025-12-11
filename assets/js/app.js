@@ -77,7 +77,7 @@ document.addEventListener('click', (e)=>{
   }
 });
 
-// ===== CERRAR SIDEBAR AL HACER CLICK EN LINK =====
+// Cierra sidebar al hacer click en un enlace
 const sidebarLinks = document.querySelectorAll('.sidebar nav a');
 sidebarLinks.forEach(link => {
   link.addEventListener('click', () => {

@@ -16,9 +16,9 @@
   --card-shadow: 0 8px 24px rgba(22,20,19,0.08);
   --glass-border: rgba(212,175,55,0.12);
 
-  --accent-1: #F8D7E3; /* pastel rosa */
-  --accent-2: #D9F1FF; /* pastel celeste */
-  --accent-3: #E7D8FF; /* lavanda */
+  --accent-1: #F8D7E3;
+  --accent-2: #D9F1FF;
+  --accent-3: #E7D8FF;
 
   --max-width: 1200px;
 }
@@ -129,6 +129,15 @@ body{
   cursor: pointer;
 }
 
+/* OVERLAY CORRECCIÓN PARA MÓVIL */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000; /* MENOR QUE EL SIDEBAR */
+  display: none;
+}
+
 /* ===== MAIN CONTENT ===== */
 .main {
   margin-left:260px;
@@ -231,10 +240,10 @@ body{
 
 .sidebar-logo #logo {
   width: 100%;
-  max-width: 150px; /* limita tamaño en PC */
+  max-width: 150px;
   height: auto;
   display: block;
-  border-radius: 12px; 
+  border-radius: 12px;
 }
 
 /* Móvil */
@@ -246,13 +255,4 @@ body{
   .sidebar-logo #logo {
     max-width: 110px;
   }
-}
-
-/* CORRECCIÓN: overlay click pasa por links en vertical */
-#overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1500;
-  display: none;
 }
