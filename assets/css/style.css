@@ -483,3 +483,30 @@ img.loaded{opacity:1}
   text-shadow:
     0 4px 12px rgba(212,175,55,0.35);
 }
+/* ===============================
+   📱 FIX FINAL SIDEBAR MÓVIL
+   (abre y cierra correctamente)
+=============================== */
+@media (max-width: 768px) {
+
+  /* Estado cerrado (por defecto) */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    left: 0 !important;
+  }
+
+  /* Estado abierto */
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Overlay controlado */
+  #overlay {
+    display: none;
+  }
+
+  #overlay.active {
+    display: block;
+  }
+}
