@@ -8,70 +8,94 @@
 </head>
 <body>
 
-<button class="hamburger" onclick="toggleSidebar()">☰</button>
-<div id="overlay" onclick="toggleSidebar()"></div>
+  <!-- HAMBURGER PARA MÓVIL -->
+  <button class="hamburger" aria-label="Abrir menú">☰</button>
 
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-logo">
-    <img id="logo" src="assets/images/logo.jpg" alt="LIARA Fashion">
-  </div>
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="toggleSidebar()"></div>
 
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="catalogo.html" class="active">Catálogo</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
-</aside>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img id="logo" src="assets/images/logo.jpg" alt="LIARA Fashion">
+    </div>
 
-<main class="main">
-  <div class="container">
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html" class="active">Catálogo</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </aside>
 
-    <header class="header">
-      <div class="brand"><h1>Catálogo</h1></div>
-    </header>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main">
+    <div class="container">
 
-    <section>
-      <h3 class="section-title">Colecciones</h3>
-
-      <div class="products-grid">
-
-        <div class="card">
-          <img src="assets/images/productos/conjunto-rojo.jpg" loading="lazy">
-          <h3>Conjunto rojo</h3>
-          <div class="price">$230.000</div>
-          <button class="btn-primary" onclick="order('Conjunto rojo')">Consultar</button>
+      <!-- HEADER -->
+      <header class="header">
+        <div class="brand">
+          <h1>Catálogo</h1>
         </div>
+      </header>
 
-        <div class="card">
-          <img src="assets/images/productos/vestido-corto-en-lentejuelas.jpg" loading="lazy">
-          <h3>Vestido corto en lentejuelas</h3>
-          <div class="price">$190.000</div>
-          <button class="btn-primary" onclick="order('Vestido corto en lentejuelas')">Consultar</button>
+      <!-- SECCIÓN PRODUCTOS -->
+      <section>
+        <h3 class="section-title">Colecciones</h3>
+
+        <div class="products-grid">
+
+          <div class="card">
+            <img src="assets/images/productos/conjunto-rojo.jpg" loading="lazy" alt="Conjunto rojo">
+            <h3>Conjunto rojo</h3>
+            <div class="price">$230.000</div>
+            <button class="btn-primary" onclick="order('Conjunto rojo')">
+              Consultar
+            </button>
+          </div>
+
+          <div class="card">
+            <img src="assets/images/productos/vestido-corto-en-lentejuelas.jpg" loading="lazy" alt="Vestido corto en lentejuelas">
+            <h3>Vestido corto en lentejuelas</h3>
+            <div class="price">$190.000</div>
+            <button class="btn-primary" onclick="order('Vestido corto en lentejuelas')">
+              Consultar
+            </button>
+          </div>
+
+          <div class="card">
+            <img src="assets/images/productos/vestido-verde-en-tela-recamada.jpg" loading="lazy" alt="Vestido verde en tela recamada">
+            <h3>Vestido verde en tela recamada</h3>
+            <div class="price">$250.000</div>
+            <button class="btn-primary" onclick="order('Vestido verde en tela recamada')">
+              Consultar
+            </button>
+          </div>
+
+          <div class="card">
+            <img src="assets/images/productos/vestido-corto-en-color-dorado.jpg" loading="lazy" alt="Vestido corto en color dorado">
+            <h3>Vestido corto en color dorado</h3>
+            <div class="price">$180.000</div>
+            <button class="btn-primary" onclick="order('Vestido corto en color dorado')">
+              Consultar
+            </button>
+          </div>
+
         </div>
+      </section>
 
-        <div class="card">
-          <img src="assets/images/productos/vestido-verde-en-tela-recamada.jpg" loading="lazy">
-          <h3>Vestido verde en tela recamada</h3>
-          <div class="price">$250.000</div>
-          <button class="btn-primary" onclick="order('Vestido verde en tela recamada')">Consultar</button>
-        </div>
+      <!-- FOOTER -->
+      <footer class="footer">
+        © 2025 LIARA Fashion
+      </footer>
 
-        <div class="card">
-          <img src="assets/images/productos/vestido-corto-en-color-dorado.jpg" loading="lazy">
-          <h3>Vestido corto en color dorado</h3>
-          <div class="price">$180.000</div>
-          <button class="btn-primary" onclick="order('Vestido corto en color dorado')">Consultar</button>
-        </div>
+    </div>
+  </main>
 
-      </div>
-    </section>
+  <!-- WHATSAPP -->
+  <div class="whatsapp" title="Contactar por WhatsApp">💬</div>
 
-    <footer class="footer">© 2025 LIARA Fashion</footer>
-  </div>
-</main>
-
-<div class="whatsapp">💬</div>
-<script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
+

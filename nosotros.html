@@ -8,12 +8,15 @@
 </head>
 <body>
 
+  <!-- HAMBURGER PARA MÓVIL -->
   <button class="hamburger" aria-label="Abrir menú">☰</button>
 
+  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
-  <img id="logo" src="assets/images/logo.jpg" alt="LIARA Fashion">
-</div>
+      <img id="logo" src="assets/images/logo.jpg" alt="LIARA Fashion">
+    </div>
+
     <nav>
       <a href="index.html">Inicio</a>
       <a href="catalogo.html">Catálogo</a>
@@ -22,25 +25,47 @@
     </nav>
   </aside>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="main">
     <div class="container">
-      <header class="header"><div class="brand"><h1>Nosotros</h1></div></header>
 
+      <!-- HEADER -->
+      <header class="header">
+        <div class="brand">
+          <h1>Nosotros</h1>
+        </div>
+      </header>
+
+      <!-- HERO -->
       <section class="hero">
         <h2>Nuestra historia</h2>
         <p>LIARA Fashion nace de la pasión por la moda femenina y los detalles finos.</p>
       </section>
 
+      <!-- INFO -->
       <section class="info-section">
-        <p style="margin-bottom:12px">Nuestro equipo selecciona telas y cortes con enfoque en elegancia y confort.</p>
-        <p>Hacemos envíos nacionales y atendemos pedidos personalizados.</p>
+        <p style="margin-bottom:12px">
+          Nuestro equipo selecciona telas y cortes con enfoque en elegancia y confort.
+        </p>
+        <p>
+          Hacemos envíos nacionales y atendemos pedidos personalizados.
+        </p>
       </section>
 
-      <footer class="footer">© 2025 LIARA Fashion</footer>
+      <!-- FOOTER -->
+      <footer class="footer">
+        © 2025 LIARA Fashion
+      </footer>
+
     </div>
   </main>
 
+  <!-- OVERLAY (OBLIGATORIO PARA MOBILE) -->
+  <div id="overlay"></div>
+
+  <!-- WHATSAPP -->
   <div class="whatsapp" title="Contactar por WhatsApp">💬</div>
+
   <script src="assets/js/app.js"></script>
 </body>
 </html>

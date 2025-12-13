@@ -27,12 +27,13 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* DARK THEME */
+/* DARK THEME – PREMIUM */
 :root.dark {
-  --bg: #0f0f10;
-  --white: #0f0f10;
-  --muted: #cfcfcf;
-  --glass: rgba(255,255,255,0.04);
+  --bg: #0f1115;
+  --white: #141821;
+  --muted: #b5b8c0;
+  --glass: rgba(255,255,255,0.06);
+  --card-shadow: 0 10px 30px rgba(0,0,0,0.55);
 }
 
 /* ===== RESET ===== */
@@ -46,6 +47,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background .35s ease, color .25s ease;
+}
+:root.dark body {
+  background: radial-gradient(
+    circle at top,
+    #1a1f2b,
+    #0f1115 70%
+  );
+  color: #e8e9ec;
 }
 
 /* ===== LAYOUT ===== */
@@ -69,6 +78,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+:root.dark .sidebar {
+  background: #121622;
+  border-right: 1px solid rgba(212,175,55,0.25);
 }
 
 .sidebar-logo {
@@ -144,6 +157,17 @@ body {
   font-size:18px;
   color:var(--muted);
 }
+:root.dark h1,
+:root.dark h2,
+:root.dark h3 {
+  color: #f3f4f6;
+}
+
+:root.dark p,
+:root.dark span,
+:root.dark div {
+  color: var(--muted);
+}
 
 /* SLIDER */
 .slider {
@@ -185,6 +209,17 @@ body {
   box-shadow:var(--card-shadow);
   transition:.25s;
 }
+:root.dark .card,
+:root.dark .hero {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
 
 .card:hover {
   transform:translateY(-8px);
@@ -217,6 +252,15 @@ body {
   font-weight:700;
   cursor:pointer;
 }
+:root.dark .btn-primary,
+:root.dark .sidebar nav a.active {
+  background: linear-gradient(
+    135deg,
+    #d4af37,
+    #9f7e25
+  );
+  box-shadow: 0 8px 22px rgba(212,175,55,0.35);
+}
 
 /* FOOTER */
 .footer {
@@ -242,6 +286,9 @@ img[loading="lazy"]{
   transition:.4s;
 }
 img.loaded{opacity:1}
+:root.dark img {
+  filter: brightness(1.05) contrast(1.08);
+}
 
 /* SCROLL REVEAL */
 .reveal{
@@ -546,4 +593,92 @@ img.loaded{opacity:1}
 ========================= */
 #overlay.active {
   display: block;
+}
+/* ===============================
+   ☰ HAMBURGER PREMIUM BUTTON
+=============================== */
+.hamburger {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1300;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+
+  border-radius: 14px;
+  border: 1px solid rgba(212,175,55,0.35);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.95),
+    rgba(255,255,255,0.75)
+  );
+
+  color: var(--gold);
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.6);
+
+  backdrop-filter: blur(6px);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+.hamburger:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 12px 30px rgba(212,175,55,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.9);
+
+  background: linear-gradient(
+    135deg,
+    #fff,
+    #fdf6dd
+  );
+}
+.hamburger:active {
+  transform: scale(0.94);
+}
+@media (max-width: 768px) {
+  .hamburger {
+    top: 14px;
+    left: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+}
+/* ===============================
+   🧩 OFFSET PARA HAMBURGER
+   Evita que tape títulos y marca
+=============================== */
+
+.main {
+  padding-top: 72px; /* espacio para el botón ☰ */
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 84px;
+  }
+}
+.header {
+  margin-top: 12px;
+}
+
+.brand h1 {
+  margin-bottom: 6px;
 }

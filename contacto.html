@@ -8,12 +8,18 @@
 </head>
 <body>
 
+  <!-- HAMBURGER PARA MÓVIL -->
   <button class="hamburger" aria-label="Abrir menú">☰</button>
 
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
-  <div class="sidebar-logo">
-  <img id="logo" src="assets/images/logo.jpg" alt="LIARA Fashion">
-  </div>
+    <div class="sidebar-logo">
+      <img id="logo" src="assets/images/logo.jpg" alt="LIARA Fashion">
+    </div>
+
     <nav>
       <a href="index.html">Inicio</a>
       <a href="catalogo.html">Catálogo</a>
@@ -22,30 +28,81 @@
     </nav>
   </aside>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="main">
     <div class="container">
-      <header class="header"><div class="brand"><h1>Contacto</h1></div></header>
 
+      <!-- HEADER -->
+      <header class="header">
+        <div class="brand">
+          <h1>Contacto</h1>
+        </div>
+      </header>
+
+      <!-- HERO -->
       <section class="hero">
         <h2>Hablemos</h2>
         <p>¿Tienes dudas? Contáctanos por WhatsApp o completa el formulario.</p>
-        <button class="btn-primary" onclick="window.open('https://wa.me/573217147358?text=Hola%20LIARA')">Contactar por WhatsApp</button>
+
+        <button
+          class="btn-primary"
+          onclick="window.open('https://wa.me/573217147358?text=Hola%20LIARA')">
+          Contactar por WhatsApp
+        </button>
       </section>
 
+      <!-- FORMULARIO -->
       <section style="margin-top:18px">
-        <form class="card" style="max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:12px">
-          <input type="text" placeholder="Nombre" style="padding:12px;border-radius:10px;border:1px solid #eee">
-          <input type="email" placeholder="Correo" style="padding:12px;border-radius:10px;border:1px solid #eee">
-          <textarea rows="5" placeholder="Mensaje" style="padding:12px;border-radius:10px;border:1px solid #eee"></textarea>
-          <button class="btn-primary" type="button" onclick="alert('Gracias — pronto te contactamos')">Enviar</button>
+        <form
+          class="card"
+          style="
+            max-width:600px;
+            margin:0 auto;
+            display:flex;
+            flex-direction:column;
+            gap:12px
+          "
+        >
+          <input
+            type="text"
+            placeholder="Nombre"
+            style="padding:12px;border-radius:10px;border:1px solid #eee"
+          >
+
+          <input
+            type="email"
+            placeholder="Correo"
+            style="padding:12px;border-radius:10px;border:1px solid #eee"
+          >
+
+          <textarea
+            rows="5"
+            placeholder="Mensaje"
+            style="padding:12px;border-radius:10px;border:1px solid #eee"
+          ></textarea>
+
+          <button
+            class="btn-primary"
+            type="button"
+            onclick="alert('Gracias — pronto te contactamos')"
+          >
+            Enviar
+          </button>
         </form>
       </section>
 
-      <footer class="footer">© 2025 LIARA Fashion</footer>
+      <!-- FOOTER -->
+      <footer class="footer">
+        © 2025 LIARA Fashion
+      </footer>
+
     </div>
   </main>
 
+  <!-- WHATSAPP FLOAT -->
   <div class="whatsapp" title="Contactar por WhatsApp">💬</div>
+
   <script src="assets/js/app.js"></script>
 </body>
 </html>
+
