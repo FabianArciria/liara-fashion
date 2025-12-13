@@ -510,3 +510,40 @@ img.loaded{opacity:1}
     display: block;
   }
 }
+/* ==============================
+   🔥 FIX DEFINITIVO SIDEBAR MOBILE
+============================== */
+
+@media (max-width: 768px) {
+
+  /* Sidebar OCULTA por defecto */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+    left: 0; /* importante */
+  }
+
+  /* Sidebar visible */
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Overlay apagado */
+  #overlay {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Overlay activo */
+  #overlay.active {
+    display: block;
+    opacity: 1;
+  }
+}
+/* =========================
+   OVERLAY ACTIVO (FIX MOBILE)
+========================= */
+#overlay.active {
+  display: block;
+}
